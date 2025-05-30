@@ -81,7 +81,7 @@ const playlists = {
     { title: "Pra nada", file: "assets/tv/mb11.mp3" },
   ],
   relax: [
-    { title: "Paz Profunda", file: "/assets/oroche/mb1.mp3" },
+    { title: "Paz Profunda", file: "assets/oroche/mb1.mp3" },
     { title: "Brisa Suave", file: "assets/oroche/mb2.mp3" },
     { title: "Horizonte Calmo", file: "assets/oroche/mb3.mp3" },
     { title: "Horizonte Calmo", file: "assets/oroche/mb4.mp3" },
