@@ -1,0 +1,257 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.6s ease, color 0.6s ease;
+  padding: 20px;
+}
+
+/* Variáveis para temas */
+:root {
+  --pink-light: #f9e6eb;
+  --pink-text: #9c4668;
+  --pink-container: #fce7f1;
+  --dark-bg: #1e1f28;
+  --dark-text: #d6d6d8;
+  --dark-container: #2b2c3a;
+  --transition-speed: 0.6s;
+}
+
+/* Temas */
+body.light {
+  --bg: var(--pink-light);
+  --text: var(--pink-text);
+  --container-bg: var(--pink-container);
+}
+
+body.dark {
+  --bg: var(--dark-bg);
+  --text: var(--dark-text);
+  --container-bg: var(--dark-container);
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, #fff9 0.8px, transparent 1px),
+    radial-gradient(1px 1px at 40px 70px, #fff9 0.8px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.container {
+  max-width: 480px;
+  width: 100%;
+  background: var(--container-bg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+}
+header .subtitulo {
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin-top: 6px;
+  font-style: italic;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+/* Navegação */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.playlist-btn {
+  flex-grow: 1;
+  min-width: 110px;
+  background: transparent;
+  border: 2px solid var(--text);
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.playlist-btn.active,
+.playlist-btn:hover {
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+/* TV frame */
+.tv-frame {
+  background: #222;
+  border-radius: 30px;
+  padding: 25px 20px 40px;
+  box-shadow:
+    inset 0 0 30px #ff66cc88,
+    0 12px 20px rgba(255, 102, 204, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+body.light .tv-frame {
+  background: #f8c1dc;
+  box-shadow:
+    inset 0 0 30px #cc3399aa,
+    0 12px 20px rgba(204, 51, 153, 0.5);
+}
+
+/* Tela */
+.screen {
+  background: #000;
+  border-radius: 18px;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px 15px 20px;
+  color: #eee;
+  text-shadow: 0 0 4px #000;
+  font-size: 1.1rem;
+}
+body.light .screen {
+  background: #ffc8ed;
+  color: #922764;
+  text-shadow: none;
+}
+
+/* Mensagens */
+.mensagem {
+  flex-grow: 1;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Título da música */
+.musica-titulo {
+  font-weight: 700;
+  font-size: 1rem;
+  opacity: 0.75;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Controles */
+.controles {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 12px;
+}
+.controles button {
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+.controles button:hover {
+  color: var(--pink-text);
+}
+
+/* Player nativo */
+#audio-player {
+  width: 100%;
+  outline: none;
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 35px;
+  filter: invert(100%);
+  mix-blend-mode: difference;
+  cursor: pointer;
+}
+body.light #audio-player {
+  filter: none;
+  mix-blend-mode: normal;
+}
+
+/* Botão de tema */
+#theme-toggle {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--text);
+  color: var(--bg);
+  border: none;
+  cursor: pointer;
+  font-size: 26px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  z-index: 999;
+}
+#theme-toggle:hover {
+  background-color: var(--pink-text);
+  color: var(--pink-light);
+}
+
+/* Footer */
+footer {
+  margin-top: 22px;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 520px) {
+  .container {
+    padding: 15px 12px 22px;
+  }
+  .screen {
+    height: 220px;
+    font-size: 1rem;
+    padding: 18px 12px 15px;
+  }
+  header h1 {
+    font-size: 2.2rem;
+  }
+  .playlist-btn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  .screen {
+    height: 240px;
+    font-size: 1.05rem;
+  }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Para Ela - Cantinho das Músicas</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Para Ela</h1>
+      <p class="subtitulo">Músicas & Mensagens para momentos especiais</p>
+    </header>
+
+    <nav>
+      <button class="playlist-btn active" data-playlist="princesa">Princesa da Disney</button>
+      <button class="playlist-btn" data-playlist="tv">Eu, você, música e a televisão</button>
+      <button class="playlist-btn" data-playlist="relax">Oroche</button>
+    </nav>
+
+    <section class="player-section">
+      <div class="tv-frame">
+        <div class="screen">
+          <audio id="audio-player" controls preload="auto"></audio>
+            <div class="controles">
+                <button id="btn-prev" title="Música anterior">⏮️</button>
+                <button id="btn-play" title="Play/Pause">▶️</button>
+                <button id="btn-next" title="Próxima música">⏭️</button>
+            </div>
+            <div id="mensagem" class="mensagem"></div>
+            <div id="musica-titulo" class="musica-titulo"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Feito com ❤️ por alguém que te valoriza muito</p>
+    </footer>
+
+  </div>
+
+  <button id="theme-toggle" title="Trocar tema">🌙</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
